@@ -78,6 +78,8 @@ Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus')
 
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
+Route::get('/pegawai/views/{id}','App\Http\Controllers\PegawaiController@views');
+
 // pemanggilan sebuah library -> konsep OOP
 // kalo di php pake use dan ::
 // kalo di java pake import dan .

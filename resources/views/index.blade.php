@@ -9,10 +9,13 @@
 	<a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
 
 	<br/>
+    <br/>
+
     <p>Cari Data Pegawai berdasarkan Nama:</p>
 	<form action="/pegawai/cari" method="GET">
 		<input class="form-control"  type="text" name="cari" placeholder="Cari Pegawai .."
         value="{{ old("cari", isset($cari) ? $cari : '') }}">
+        <br/>
 		<input class="btn btn-primary"  type="submit" value="CARI">
 	</form>
 	<br/>
@@ -32,7 +35,7 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-                <a href="/pegawai/view/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
+                <a href="/pegawai/views/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
                 |
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
 				|
