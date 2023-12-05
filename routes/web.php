@@ -80,6 +80,14 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 Route::get('/pegawai/views/{id}','App\Http\Controllers\PegawaiController@views');
 
+Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangBelanjaController@index');
+Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangBelanjaController@beli');
+Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangBelanjaController@store');
+// Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
+Route::post('/keranjangbelanja/update','App\Http\Controllers\KeranjangBelanjaController@update');
+Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangBelanjaController@hapus');
+
+
 // pemanggilan sebuah library -> konsep OOP
 // kalo di php pake use dan ::
 // kalo di java pake import dan .
