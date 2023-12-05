@@ -78,29 +78,4 @@ class KeranjangBelanjaController extends Controller
 		return redirect('/keranjangbelanja');
 	}
 
-    // public function cari(Request $request)
-	// {
-	// 	// menangkap data pencarian
-	// 	$cari = $request->cari;
-
-    // 		// mengambil data dari table keranjangbelanja sesuai pencarian data
-	// 	$keranjangbelanja = DB::table('keranjangbelanja')
-	// 	->where('keranjangbelanja_nama','like',"%".$cari."%")
-	// 	->paginate();
-
-    // 		// mengirim data keranjangbelanja ke view index
-	// 	return view('index',['keranjangbelanja' => $keranjangbelanja, 'cari' => $cari]);
-
-	// }
-
-    // // method untuk view data keranjangbelanja
-	// public function views($id)
-	// {
-	// 	// mengambil data keranjangbelanja berdasarkan id yang dipilih
-	// 	$keranjangbelanja = DB::table('keranjangbelanja')->where('keranjangbelanja_id',$id)->get();
-	// 	// passing data keranjangbelanja yang didapat ke view view.blade.php
-	// 	return view('views',['keranjangbelanja' => $keranjangbelanja]);
-
-	// }
-
 }

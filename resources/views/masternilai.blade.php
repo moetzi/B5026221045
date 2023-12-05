@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Edward Yosafat Sirait - 5026221091</a>
+  <a class="navbar-brand" href="#">Mutiara Noor Fauzia - 5026221045</a>
 
 </nav>
 <br>

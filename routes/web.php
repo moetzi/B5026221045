@@ -80,17 +80,29 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 Route::get('/pegawai/views/{id}','App\Http\Controllers\PegawaiController@views');
 
+//route CRUD Keranjang belanja
 Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangBelanjaController@index');
 Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangBelanjaController@beli');
 Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangBelanjaController@store');
-// Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
-Route::post('/keranjangbelanja/update','App\Http\Controllers\KeranjangBelanjaController@update');
 Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangBelanjaController@hapus');
 
 //route CRUD Nilai
 Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@indexnilai');
 Route::get('/nilaikuliah/tambah','App\Http\Controllers\NilaiController@tambah');
 Route::post('/nilaikuliah/storenilai','App\Http\Controllers\NilaiController@storenilai');
+
+//route CRUD Kaos
+Route::get('/kaos','App\Http\Controllers\KaosController@index');
+Route::get('/kaos/tambahkaos','App\Http\Controllers\KaosController@tambah');
+Route::post('/kaos/store','App\Http\Controllers\KaosController@store');
+Route::get('/kaos/editkaos/{id}','App\Http\Controllers\KaosController@edit');
+Route::post('/kaos/update','App\Http\Controllers\KaosController@update');
+Route::get('/pegawai/hapus/{id}','App\Http\Controllers\KaosController@hapus');
+
+Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
+
+Route::get('/kaos/viewkaos/{id}','App\Http\Controllers\KaosController@views');
+
 
 
 // pemanggilan sebuah library -> konsep OOP

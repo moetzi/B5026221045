@@ -4,6 +4,9 @@
 
     <a href="/nilaikuliah/tambah" class="btn btn-primary"> + Tambah Data</a>
 
+    <br>
+    <br>
+
 
 	<table class="table table-striped table-hover">
 		<tr>
