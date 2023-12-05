@@ -34,8 +34,8 @@
 			<td>{{ $p->keranjangbelanja_id }}</td>
 			<td>{{ $p->keranjangbelanja_kodebarang }}</td>
 			<td>{{ $p->keranjangbelanja_jumlah }}</td>
-			<td>rupiah({{ $p->keranjangbelanja_harga }})</td>
-            <td>rupiah({{ $p->keranjangbelanja_jumlah * $p->keranjangbelanja_harga }})</td>
+			<td>{{ number_format($p->keranjangbelanja_harga,0,',','.') }}</td>
+            <td>{{ number_format(($p->keranjangbelanja_jumlah * $p->keranjangbelanja_harga),0,',','.') }}</td>
 			<td>
                 {{-- <a href="/pegawai/views/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
                 |

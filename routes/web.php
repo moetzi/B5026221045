@@ -87,6 +87,11 @@ Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangBelanjaCont
 Route::post('/keranjangbelanja/update','App\Http\Controllers\KeranjangBelanjaController@update');
 Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangBelanjaController@hapus');
 
+//route CRUD Nilai
+Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@indexnilai');
+Route::get('/nilaikuliah/tambah','App\Http\Controllers\NilaiController@tambah');
+Route::post('/nilaikuliah/storenilai','App\Http\Controllers\NilaiController@storenilai');
+
 
 // pemanggilan sebuah library -> konsep OOP
 // kalo di php pake use dan ::
