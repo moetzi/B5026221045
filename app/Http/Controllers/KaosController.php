@@ -33,12 +33,15 @@ class kaosController extends Controller
 	// method untuk insert data ke table kaos
 	public function store(Request $request)
 	{
+        $ketersediaan = ($request->stock <= 0) ? 'N' : $request->ketersediaan;
+        $stock = ($request->ketersediaan == 'N') ? 0 : $request->stock;
+
 		// insert data ke table kaos
 		DB::table('kaos')->insert([
 			'kodekaos' => $request->kode,
 			'merkkaos' => $request->merk,
-			'stockkaos' => $request->stock,
-			'ketersediaan' => $request->ketersediaan
+			'stockkaos' => $stock,
+			'ketersediaan' => $ketersediaan
 		]);
 		// alihkan halaman ke halaman kaos
 		return redirect('/kaos');
@@ -58,12 +61,14 @@ class kaosController extends Controller
 	// update data kaos
 	public function update(Request $request)
 	{
+        $ketersediaan = ($request->stock <= 0) ? 'N' : $request->ketersediaan;
+        $stock = ($request->ketersediaan == 'N') ? 0 : $request->stock;
 		// update data kaos
 		DB::table('kaos')->where('kodekaos',$request->id)->update([
 			'kodekaos' => $request->kode,
 			'merkkaos' => $request->merk,
-			'stockkaos' => $request->stock,
-			'ketersediaan' => $request->ketersediaan
+			'stockkaos' => $stock,
+			'ketersediaan' => $ketersediaan
 		]);
 		// alihkan halaman ke halaman kaos
 		return redirect('/kaos');
@@ -77,31 +82,6 @@ class kaosController extends Controller
 
 		// alihkan halaman ke halaman kaos
 		return redirect('/kaos');
-	}
-
-    public function cari(Request $request)
-	{
-		// menangkap data pencarian
-		$cari = $request->cari;
-
-    		// mengambil data dari table kaos sesuai pencarian data
-		$kaos = DB::table('kaos')
-		->where('merkkaos','like',"%".$cari."%");
-		// ->paginate();
-
-    		// mengirim data kaos ke view index
-		return view('kaos',['kaos' => $kaos, 'cari' => $cari]);
-
-	}
-
-    // method untuk view data kaos
-	public function views($id)
-	{
-		// mengambil data kaos berdasarkan id yang dipilih
-		$kaos = DB::table('kaos')->where('kodekaos',$id)->get();
-		// passing data kaos yang didapat ke view view.blade.php
-		return view('viewkaos',['kaos' => $kaos]);
-
 	}
 
 }

@@ -3,36 +3,44 @@
 @section('title','Tambah Kaos')
 
 @section('konten')
-	<h3>Data Kaos Baru</h3>
+    <br>
+    <br>
+	<center><h3>Data Kaos Baru</h3><center>
 
 	<br/>
+    <br/>
 
-	<form action="/kaos/store" method="post" class="form-horizontal">
+	<form action="/kaos/store" method="post" class="form-horizontal justify-content-center">
 		{{ csrf_field() }}
 
-        <div class="form-group">
-            <label for="merk">Merk Kaos:</label>
+        <div class="form-group row">
+            <label for="merk" class="col-form-label col-sm-4 text-right">Merk Kaos:</label>
             <input type="text" class="form-control" style="width: 400px" placeholder="Masukkan Merk Kaos" id="merk" name="merk">
         </div>
 
-        <div class="form-group">
-            <label for="stock">Stock:</label>
+        <div class="form-group row">
+            <label for="stock" class="col-form-label col-sm-4 text-right">Stock:</label>
             <input type="number" class="form-control" style="width: 400px" placeholder="Masukkan Stock Kaos" id="stock" name="stock">
         </div>
 
-        <div class="form-group">
-            <label for="ketersediaan">Select list (select one):</label>
-            <select class="form-control" id="ketersediaan" name="ketersediaan">
+        <div class="form-group row">
+            <label for="ketersediaan" class="col-form-label col-sm-4 text-right">Ketersediaan:</label>
+            <select class="form-control" style="width: 400px" id="ketersediaan" name="ketersediaan">
               <option value="Y">tersedia</option>
               <option value="N">tidak tersedia</option>
             </select>
         </div>
 
-        <div class="d-flex flex-row bg-transparent ">
+        <br>
+        <br>
+
+        <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-primary mr-4" value="Simpan Data">Simpan</button>
             <div class="mr-2"></div>
             <a class="btn btn-dark" href="/kaos">Kembali</a>
         </div>
 	</form>
+
+    <br>
 
 @endsection

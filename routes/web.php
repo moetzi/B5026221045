@@ -97,11 +97,7 @@ Route::get('/kaos/tambahkaos','App\Http\Controllers\KaosController@tambah');
 Route::post('/kaos/store','App\Http\Controllers\KaosController@store');
 Route::get('/kaos/editkaos/{id}','App\Http\Controllers\KaosController@edit');
 Route::post('/kaos/update','App\Http\Controllers\KaosController@update');
-Route::get('/pegawai/hapus/{id}','App\Http\Controllers\KaosController@hapus');
-
-Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
-
-Route::get('/kaos/viewkaos/{id}','App\Http\Controllers\KaosController@views');
+Route::get('/kaos/hapus/{id}','App\Http\Controllers\KaosController@hapus');
 
 
 
