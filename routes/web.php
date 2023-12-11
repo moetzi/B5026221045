@@ -99,6 +99,20 @@ Route::get('/kaos/editkaos/{id}','App\Http\Controllers\KaosController@edit');
 Route::post('/kaos/update','App\Http\Controllers\KaosController@update');
 Route::get('/kaos/hapus/{id}','App\Http\Controllers\KaosController@hapus');
 
+Route::get('/kaos/cari','App\Http\Controllers\KaosController@cari');
+
+Route::get('/kaos/viewkaos/{id}','App\Http\Controllers\KaosController@viewkaos');
+
+
+//route CRUD Karyawan
+Route::get('/karyawan','App\Http\Controllers\KaryawanController@index');
+Route::get('/karyawan/tambah','App\Http\Controllers\KaryawanController@tambah');
+Route::post('/karyawan/store','App\Http\Controllers\KaryawanController@store');
+Route::get('/karyawan/hapus/{id}','App\Http\Controllers\KaryawanController@hapus');
+
+Route::post('/karyawan/checkUniqueKodepegawai', 'App\Http\Controllers\KaryawanController@checkUniqueKodepegawai');
+
+
 
 
 // pemanggilan sebuah library -> konsep OOP

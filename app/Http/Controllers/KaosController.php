@@ -84,4 +84,30 @@ class kaosController extends Controller
 		return redirect('/kaos');
 	}
 
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table kaos sesuai pencarian data
+		$kaos = DB::table('kaos')
+		->where('merkkaos','like',"%".$cari."%")
+        ->get();
+		// ->paginate();
+
+    		// mengirim data kaos ke view index
+		return view('kaos',['kaos' => $kaos, 'cari' => $cari]);
+
+	}
+
+    // method untuk view data kaos
+	public function viewkaos($id)
+	{
+		// mengambil data kaos berdasarkan id yang dipilih
+		$kaos = DB::table('kaos')->where('kodekaos',$id)->get();
+		// passing data kaos yang didapat ke view view.blade.php
+		return view('viewkaos',['kaos' => $kaos]);
+
+	}
+
 }
